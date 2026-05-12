@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Digital watch</title>
+     <style>
+          * {
+               margin: 0;
+               padding: 0;
+               box-sizing: border-box;
+               font-family: 'Poppins', sans-serif;
+          }
+
+          body {
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100vh;
+               background: #000;
+               color: white;
+          }
+
+          .container {
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+          }
+
+          .main-div {
+               border: 1px solid white;
+               border-radius: 10px;
+               font-size: 50px;
+               padding: 20px 40px;
+          }
+
+          .stand {
+               width: 150px;
+               height: 10px;
+               border-radius: 10px;
+               background: white;
+               /* margin-top: 20px; */
+          }
+     </style>
+</head>
+
+<body>
+     <div class="container">
+          <div class="main-div">
+               <p id="time">10:30:45 AM</p>
+          </div>
+          <div class="stand"></div>
+     </div>
+     <script>
+          const currentTime = () => {
+               const timeElem = document.getElementById("time");
+               const curTime = new Date().toLocaleTimeString();
+               console.log(curTime);
+               timeElem.innerText = curTime;
+          }
+          currentTime();
+          setInterval(currentTime, 1000);
+     </script>
+</body>
+
+</html>
